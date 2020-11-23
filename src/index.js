@@ -20,7 +20,6 @@ function renderDogBar(dog){
 
 
 function dogInfo(dog){
-    
     let div = document.getElementById('dog-info')
     let id = dog.id
 
@@ -46,13 +45,11 @@ function dogInfo(dog){
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(goodness)
         })
-        
-    })
+        .then(response => response.json())
+        .then(dog => button.innerText = dog.isGoodDog ? "Good Dog!" : "Bad Dog!")
 
-    div.innerHTML = ""
-    //find alternative way
-
-    div.append(img, h2, button)
-    
+            
+        })
+        div.innerHTML = ""
+        div.append(img, h2, button)
 }
-
