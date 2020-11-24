@@ -38,7 +38,9 @@ function dogInfo(dog){
     }
 
     button.addEventListener('click', () => {
-        let goodness = {isGoodDog: !dog.isGoodDog}
+        dog.isGoodDog = !dog.isGoodDog
+        
+        let goodness = {isGoodDog: dog.isGoodDog}
 
             fetch(`${URL}/${id}`, {
             method: "PATCH",
