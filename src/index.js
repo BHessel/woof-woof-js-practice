@@ -30,12 +30,12 @@ function dogInfo(dog){
     h2.innerText = dog.name
 
     let button = document.createElement('button')
-    
-    if (dog.isGoodDog){
-        button.innerText = 'Good Dog!'
-    } else {
-        button.innerText = 'Bad Dog!'
-    }
+    button.innerText = dog.isGoodDog ? 'Good Dog!' : 'Bad Dog!'
+    // if (dog.isGoodDog){
+    //     button.innerText = 'Good Dog!'
+    // } else {
+    //     button.innerText = 'Bad Dog!'
+    // }
 
     button.addEventListener('click', () => {
         dog.isGoodDog = !dog.isGoodDog
